@@ -2,7 +2,7 @@
 
 1.**A client requires uploading and downloading CSV files to your web system, how would
 you implement that?**
-* Reply: the IO features by using Celery background tasks. The files would be stored in a external file system so to not fill the memory of the server and their URLs would be linked to the users in a database table.
+* Reply: the IO features would be implemented by using Celery background tasks. The files would be stored in an external file system so to not fill the memory of the server and their URLs would be linked to the users in a database table.
 
 2.**Your system consists of an application that receives a measure from a sensor through an
 API and stores it in a model called “Measures”. Your client wants to configure one alarm
@@ -15,4 +15,4 @@ without blocking the API?**
 records using Django’s admin. They request that we make an admin action so they can
 update a pricing field on 10,000 records at once. How would you go about implementing
 this? Describe any performance issues you expect to encounter.**
-* Reply: there would be a page with all the records (limited to 10,000) on the table with a few fields for filtering, checkbox for each record, one for selecting all records and button for proceeding. Then the application would ask for the new price. On submitting the update, the application would make a bulk update on all selected records. It should slow down the server a little bit during the operation.
+* Reply: there would be a page with all the records (limited to 10,000) on the table with a few fields for filtering, one checkbox for each record, one checkbox for selecting all records and a button for proceeding. Then the application would ask for the new price. On submitting the update, the application would make a bulk update on all selected records. It should slow down the server a little bit during the operation.
