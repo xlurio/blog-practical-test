@@ -19,7 +19,7 @@ $ docker build . -t blog
 * On Linux:
 
 ```
-$ sudo build . -t blog
+$ sudo docker build . -t blog
 ```
 
 
