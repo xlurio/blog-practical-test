@@ -1,0 +1,22 @@
+{% extends '../base.html' %}
+<!-- prettier-ignore -->
+{% block title %}Login{% endblock title %}
+<!-- prettier-ignore -->
+{% block page_content %}
+<form id="login-form" actions="#" method="post">
+  {% csrf_token %}
+  <div class="form-group mb-3">
+    {{ form.username.errors }}
+    <label for="{{form.username.id_for_label}}">E-mail: </label>
+    {{form.username}}
+  </div>
+  <!-- prettier-ignore -->
+  <div class="form-group mb-3">
+  {{ form.password.errors }}
+  <label for="{{form.password.id_for_label}}">Password: </label>
+  {{form.password}}
+</div>
+  <input type="submit" value="Login" class="btn btn-primary" />
+</form>
+<!-- prettier-ignore -->
+{% endblock page_content %}

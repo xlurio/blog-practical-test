@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+<!-- prettier-ignore -->
+{% load static %}
+<!-- prettier-ignore -->
+{% block title %}New Post{% endblock %}
+{% block css_files %}
+<link href="{% static 'styles/tools/mixins.css' %}" rel="stylesheet" />
+{% endblock css_files %}
+<!-- prettier-ignore -->
+{% block page_title %}Make a post{% endblock page_title %}
+{% block page_content %}
+<form id="news-creation-form" method="post">
+  {% csrf_token %}
+  <div class="form-group mb-3">
+    <label for="{{form.title.id_for_label}}">Title: </label>
+    {{form.title}}
+  </div>
+  <div class="form-group mb-3">
+    <label for="{{form.category.id_for_label}}">Category: </label>
+    {{form.category}}
+  </div>
+  <div class="form-group mb-3">{{form.content}}</div>
+  <input type="submit" value="Create post" class="btn btn-primary float-end" />
+</form>
+{% endblock %}
